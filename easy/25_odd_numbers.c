@@ -7,4 +7,3 @@ int main(int argc, const char * argv[]) {
         printf("%d\n", i);
     return 0;
 }
-

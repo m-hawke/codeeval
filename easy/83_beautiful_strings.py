@@ -1,5 +1,6 @@
+import sys
+
 ##31.013
-#import sys
 #from collections import Counter
 #
 #for line in (l.strip() for l in open(sys.argv[1])):
@@ -25,4 +26,4 @@ for line in (l.strip() for l in open(sys.argv[1])):
         if c.isalpha():
             counts[ord(c.lower())-ORD_A] += 1
     counts.sort(reverse=True)
-    print sum(a*b for a,b in zip(counts, range(26,0,-1)))
+    print(sum(a*b for a,b in zip(counts, range(26,0,-1))))

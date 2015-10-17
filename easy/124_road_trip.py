@@ -1,4 +1,4 @@
-mport sys
+import sys
 import re
 
 pattern = re.compile('[^0-9 ]')

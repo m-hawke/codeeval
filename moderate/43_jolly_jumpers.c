@@ -8,17 +8,17 @@ int main(int argc, const char * argv[]) {
     char *token;
 
     while (fgets(line, 1024, file)) {
-        int n = atoi(strtok(line, " "));
-        int diffs[n];           /* N.B. variable-sized array */
-        int diff, current, previous;
+        int n = atoi(strtok(line, " "));    /* number of ints in the seqence */
+        int diffs[n];                       /* N.B. variable-sized array */
+        int previous;
         int is_jolly = 1;
 
         bzero(diffs, sizeof(diffs));
         previous = atoi(strtok(NULL, " "));
 
         for (token=strtok(NULL, " "); token!=NULL; token=strtok(NULL, " ")) {
-            current = atoi(token);
-            diff = abs(current - previous);
+            int current = atoi(token);
+            int diff = abs(current - previous);
             if ((0 < diff && diff < n) && (!diffs[diff])) {
                 diffs[diff] = 1;
                 previous = current;

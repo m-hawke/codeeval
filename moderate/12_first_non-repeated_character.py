@@ -4,7 +4,7 @@ import sys
 for line in (l.strip() for l in open(sys.argv[1])):
     for c in line:
         if line.count(c) == 1:
-            print c
+            print(c)
             break
 
 #from collections import defaultdict

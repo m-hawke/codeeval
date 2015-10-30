@@ -24,11 +24,10 @@ int main(int argc, const char * argv[]) {
         else {
             int print_comma = 0;
             for (int i=0; i<sizeof(AMOUNTS)/sizeof(int); i++) {
-                int n = change / AMOUNTS[i];
-                change = change % AMOUNTS[i];
-                for (; n>0; n--)
+                for (int n=change/AMOUNTS[i]; n>0; n--)
                     print_comma = printf("%s%s", print_comma ? "," : "",
                                             AMOUNT_NAMES[i]);
+                change = change % AMOUNTS[i];
             }
             printf("\n");
         }

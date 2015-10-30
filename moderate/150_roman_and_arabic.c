@@ -20,14 +20,14 @@ int main(int argc, const char * argv[]) {
     char line[LINE_LEN];
 
     while (fgets(line, LINE_LEN, file)) {
-        int len = strlen(line);
-        if (line[len-1] == '\n')
-            line[len-1] = '\0';
+        if (line[strlen(line)-1] == '\n')
+            line[strlen(line)-1] = '\0';
 
-        char *last_pair = line + len - 3;
+        int len = strlen(line);
+        char *last_pair = line + len - 2;
         int total = atoi(last_pair) * roman_numeral_value(last_pair[1]);
 
-        for (int i=0; i<strlen(line)-2; i+=2) {
+        for (int i=0; i<len-2; i+=2) {
             int value = (atoi(line+i) * roman_numeral_value(line[i+1]));
             if (roman_numeral_value(line[i+3]) > roman_numeral_value(line[i+1]))
                 value *= -1;

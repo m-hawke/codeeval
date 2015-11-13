@@ -17,7 +17,7 @@ for line in open(sys.argv[1]):
     for n in range(1, matrix_size+1):
         g = sub_matrices(matrix, matrix_size, n)
         first = next(g).count('1')
-        for m in g:
+        for m in g:     # uses less memory than all()
             if m.count('1') != first:
                 break
         else:

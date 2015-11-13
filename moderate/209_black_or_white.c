@@ -6,7 +6,7 @@
 #define MAX_MATRIX_SIZE 25
 
 /* Iterate over all sub matrices of size n, checking that the number of ones
- * (blacks) is the same for all sub matrix. Assumes that matrix is a square
+ * (blacks) is the same for each sub matrix. Assumes that matrix is a square
  * matrix. */
 int check_sub_matrices(char matrix[], int matrix_size, int n) {
     int expected_blacks = -1;

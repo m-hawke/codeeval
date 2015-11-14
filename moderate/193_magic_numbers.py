@@ -31,11 +31,25 @@ magic_numbers = [
     3962, 5263, 5267, 5623, 5627, 6231, 6235, 6239, 6271, 6275, 6279, 6312,
     6352, 6392, 6712, 6752, 6792, 7126, 7162, 7526, 7562, 7926, 7962, 9263,
     9267, 9623, 9627
-]
-
+]   
+    
 for line in sys.stdin:
     A, B = line.split()
+    A = int(A)
+    B = int(B)
     # It's faster to iterate over the magic numbers and check that they are in
     # range than the other way around.
-    l = [n for n in magic_numbers if int(A) <= n <= int(B)]
-    print(' '.join((str(x) for x in l)) if l else -1)
+    l = [str(n) for n in magic_numbers if A <= n <= B]
+    print(' '.join(l) if l else -1)
+
+## bisect is faster, but uses more memory so codeeval ranks this lower
+#from bisect import bisect, bisect_left
+#
+#for line in sys.stdin:
+#    A, B = line.split()
+#    # It's faster to iterate over the magic numbers and check that they are in
+#    # range than the other way around.
+#    lower = bisect_left(magic_numbers, int(A))
+#    upper = bisect(magic_numbers, int(B))
+#    l = [str(n) for n in magic_numbers[lower:upper]]
+#    print(' '.join(l) if l else -1)

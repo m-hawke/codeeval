@@ -5,7 +5,7 @@ for line in open(sys.argv[1]):
     lower = 0
     upper = int(l[0])
     for answer in l[1:]:
-        guess = lower + ((upper - lower + 1) / 2)
+        guess = lower + ((upper - lower + 1) // 2)
         if answer == 'Lower':
             upper = guess - 1
         elif answer == 'Higher':
